@@ -1,0 +1,17 @@
+{
+  "id": "example_plugin",
+  "version": "0.0.1",
+  "name": "Example Plugin",
+  "description": {
+    "en_us": "An example plugin of MCDR, used to debug.",
+    "zh_cn": "一个MCDR的实例插件，方便用于调试"
+  },
+  "author": [
+    "Mooling0602"
+  ],
+  "link": "https://github.com/Mooling0602",
+  "dependencies": {
+    "mcdreforged": ">=2.13"
+  },
+  "entrypoint": "example_plugin.entry"
+}

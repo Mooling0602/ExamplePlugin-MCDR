@@ -1,0 +1,21 @@
+example_plugin:
+  on_load: 测试插件正在加载...
+  hello_world: 你好，世界！
+  on_server_start: 测试插件响应了服务端正在启动的事件！
+  on_server_startup: 测试插件响应了服务端启动完成的事件！
+  on_server_crash: 测试插件检测到服务端崩溃或未正常退出！
+  on_server_stop:  测试插件检测到服务端正常关闭！
+  on_unload: 测试插件将被卸载！
+  reply_test: 测试插件成功响应你的test简单指令！
+  on_command:
+    help_message: "显示§7 !!debug §r的帮助页面"
+    help_title: "----- Example Plugin 调试工具 -----"
+    help_line1: "§7!!debug §r显示此帮助页面"
+    help_line2: "§7!!debug si <var_name> §r查询§bServerInterface()§r接口的变量信息"
+    help_line3: "§7!!debug plgSelf <var_name> §r查询§b插件内部变量§r的内容"
+    on_ltr_plgself: 
+      success: "变量%var_name%的值是%value%"
+      failed: "插件中不存在名为%var_name%的变量"
+    on_ltr_si:
+      success: "变量%var_name%的值是%value%"
+      failed: "ServerInterface()接口中不存在名为%var_name%的变量"
