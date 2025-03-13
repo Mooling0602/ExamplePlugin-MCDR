@@ -23,7 +23,7 @@ def tr(tr_key: str, return_str: Optional[bool] = True):
 
     参数:
         tr_key (str): 原始或简化后的翻译键名称
-        return_str (可选[bool]): 是否尝试转换成字符串减少出错
+        return_str (可选[bool]): 是否尝试转换成字符串以减少出错
 
     返回:
         translation: RTextMCDRTranslation组件

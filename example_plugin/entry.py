@@ -21,6 +21,12 @@ def on_load(server: PluginServerInterface, prev_module):
         # `plgSelf.id` 即为插件ID字符串
         server.unload_plugin(plgSelf.id)
 
+def on_server_start_pre(server: PluginServerInterface):
+    '''
+    参考[服务端启动前](https://docs.mcdreforged.com/zh-cn/latest/plugin_dev/event.html#server-start-pre)
+    '''
+    server.logger.info(tr("on_server_start_pre"))
+
 def on_server_start(server: PluginServerInterface):
     '''
     参考[服务端启动](https://docs.mcdreforged.com/zh-cn/latest/plugin_dev/event.html#server-start)
@@ -49,8 +55,23 @@ def on_info(server: PluginServerInterface, info: Info):
     pass
 
 def on_user_info(server: PluginServerInterface, info: Info):
+    '''
+    参考[用户信息](https://docs.mcdreforged.com/zh-cn/latest/plugin_dev/event.html#user-info)
+    '''
     if info.content == 'test':
         server.reply(info, tr("reply_test"))
+
+def on_player_joined(server: PluginServerInterface, player: str, info: Info):
+    '''
+    参考[玩家加入](https://docs.mcdreforged.com/zh-cn/latest/plugin_dev/event.html#player-joined)
+    '''
+    server.logger.info(tr("on_player_joined").replace('%player%', player).replace('%info_content%', info.content))
+
+def on_player_left(server: PluginServerInterface, player: str):
+    '''
+    参考[玩家离开](https://docs.mcdreforged.com/zh-cn/latest/plugin_dev/event.html#player-left)
+    '''
+    server.logger.info(tr("on_player_left").replace('%player%', player))
 
 def on_unload(server: PluginServerInterface):
     '''
